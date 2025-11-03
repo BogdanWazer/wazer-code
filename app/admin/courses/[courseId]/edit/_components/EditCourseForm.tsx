@@ -47,6 +47,31 @@ interface iAppProps {
 export function EditCourseForm({ data }: iAppProps) {
   const [pending, startTransition] = useTransition();
   const router = useRouter();
+  const levelMap: Record<string, CourseSchemaType["level"]> = {
+    Beginner: "Початковий",
+    Intermediate: "Середній",
+    Advanced: "Просунутий",
+  } as const;
+
+  const statusMap: Record<string, CourseSchemaType["status"]> = {
+    Draft: "Чернетка",
+    Published: "Опубліковано",
+    Archived: "Архівовано",
+  } as const;
+
+  const categoryMap: Record<string, CourseSchemaType["category"]> = {
+    Development: "Розробка",
+    Business: "Бізнес",
+    Finance: "Фінанси",
+    "IT & Software": "IT та ПЗ",
+    "Office Productivity": "Офісна продуктивність",
+    "Personal Development": "Особистий розвиток",
+    Design: "Дизайн",
+    Marketing: "Маркетинг",
+    "Health & Fitness": "Здоров'я та фітнес",
+    Music: "Музика",
+    "Teaching & Academics": "Викладання та академія",
+  } as const;
   // 1. Define your form.
   const form = useForm<CourseSchemaType>({
     resolver: zodResolver(courseSchema),
@@ -56,9 +81,11 @@ export function EditCourseForm({ data }: iAppProps) {
       fileKey: data.fileKey,
       price: data.price,
       duration: data.duration,
-      level: data.level,
-      category: data.category as CourseSchemaType["category"],
-      status: data.status,
+      level: levelMap[data.level] ?? (data.level as unknown as CourseSchemaType["level"]),
+      category:
+        categoryMap[data.category] ??
+        (data.category as unknown as CourseSchemaType["category"]),
+      status: statusMap[data.status] ?? (data.status as unknown as CourseSchemaType["status"]),
       slug: data.slug,
       smallDescription: data.smallDescription,
     },
