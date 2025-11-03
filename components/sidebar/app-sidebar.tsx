@@ -34,74 +34,74 @@ import Image from "next/image";
 const data = {
   navMain: [
     {
-      title: "Dashboard",
+      title: "Панель",
       url: "/admin",
       icon: IconDashboard,
     },
     {
-      title: "Courses",
+      title: "Курси",
       url: "/admin/courses",
       icon: IconListDetails,
     },
     {
-      title: "Analytics",
+      title: "Аналітика",
       url: "/admin/analytics",
       icon: IconChartBar,
     },
+    // {
+    //   title: "Проєкти",
+    //   url: "#",
+    //   icon: IconFolder,
+    // },
     {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "Team",
+      title: "Команда",
       url: "#",
       icon: IconUsers,
     },
   ],
   navClouds: [
     {
-      title: "Capture",
+      title: "Захоплення",
       icon: IconCamera,
       isActive: true,
       url: "#",
       items: [
         {
-          title: "Active Proposals",
+          title: "Активні пропозиції",
           url: "#",
         },
         {
-          title: "Archived",
+          title: "Архів",
           url: "#",
         },
       ],
     },
     {
-      title: "Proposal",
+      title: "Пропозиція",
       icon: IconFileDescription,
       url: "#",
       items: [
         {
-          title: "Active Proposals",
+          title: "Активні пропозиції",
           url: "#",
         },
         {
-          title: "Archived",
+          title: "Архів",
           url: "#",
         },
       ],
     },
     {
-      title: "Prompts",
+      title: "Підказки",
       icon: IconFileAi,
       url: "#",
       items: [
         {
-          title: "Active Proposals",
+          title: "Активні пропозиції",
           url: "#",
         },
         {
-          title: "Archived",
+          title: "Архів",
           url: "#",
         },
       ],
@@ -109,17 +109,17 @@ const data = {
   ],
   navSecondary: [
     {
-      title: "Settings",
+      title: "Налаштування",
       url: "#",
       icon: IconSettings,
     },
     {
-      title: "Get Help",
+      title: "Допомога",
       url: "#",
       icon: IconHelp,
     },
     {
-      title: "Search",
+      title: "Пошук",
       url: "#",
       icon: IconSearch,
     },

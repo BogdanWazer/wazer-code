@@ -66,7 +66,7 @@ export default async function SlugPage({ params }: { params: Params }) {
             </Badge>
             <Badge className="flex items-center gap-1 px-3 py-1">
               <IconClock className="size-4" />
-              <span>{course.duration} hours</span>
+              <span>{course.duration} годин</span>
             </Badge>
           </div>
 
@@ -74,7 +74,7 @@ export default async function SlugPage({ params }: { params: Params }) {
 
           <div className="space-y-6">
             <h2 className="text-3xl font-semibold tracking-tight">
-              Course Description
+              Опис курсу
             </h2>
 
             <RenderDescription json={JSON.parse(course.description)} />
@@ -84,15 +84,15 @@ export default async function SlugPage({ params }: { params: Params }) {
         <div className="mt-12 space-y-6">
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-semibold tracking-tight">
-              Course Content
+              Зміст курсу
             </h2>
             <div>
-              {course.chapter.length} chapters |{" "}
+              {course.chapter.length} розділів |{" "}
               {course.chapter.reduce(
                 (total, chapter) => total + chapter.lessons.length,
                 0
               ) || 0}{" "}
-              Lessons
+              уроків
             </div>
           </div>
 
@@ -113,16 +113,14 @@ export default async function SlugPage({ params }: { params: Params }) {
                                 {chapter.title}
                               </h3>
                               <p className="text-sm text-muted-foreground mt-1 text-left">
-                                {chapter.lessons.length} lesson
-                                {chapter.lessons.length !== 1 ? "s" : ""}
+                                {chapter.lessons.length} уроків
                               </p>
                             </div>
                           </div>
 
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs">
-                              {chapter.lessons.length} lesson
-                              {chapter.lessons.length !== 1 ? "s" : ""}
+                              {chapter.lessons.length} уроків
                             </Badge>
 
                             <IconChevronDown className="size-5 text-muted-foreground" />
@@ -148,7 +146,7 @@ export default async function SlugPage({ params }: { params: Params }) {
                                 {lesson.title}
                               </p>
                               <p className="text-xs text-muted-foreground mt-1">
-                                Lesson {lessonIndex + 1}
+                                Урок {lessonIndex + 1}
                               </p>
                             </div>
                           </div>
@@ -169,7 +167,7 @@ export default async function SlugPage({ params }: { params: Params }) {
           <Card className="py-0">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-6">
-                <span className="text-lg font-medium">Price:</span>
+                <span className="text-lg font-medium">Ціна:</span>
                 <span className="text-2xl font-bold text-primary">
                   {new Intl.NumberFormat("en-US", {
                     style: "currency",
@@ -179,16 +177,16 @@ export default async function SlugPage({ params }: { params: Params }) {
               </div>
 
               <div className="mb-6 space-y-3 rounded-lg bg-muted p-4">
-                <h4 className="font-medium">What you will get:</h4>
+                <h4 className="font-medium">Що ви отримаєте:</h4>
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-3">
                     <div className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <IconClock className="size-4" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium">Course Duration</p>
+                      <p className="text-sm font-medium">Тривалість курсу</p>
                       <p className="text-sm text-muted-foreground">
-                        {course.duration} hours
+                        {course.duration} годин
                       </p>
                     </div>
                   </div>
@@ -198,7 +196,7 @@ export default async function SlugPage({ params }: { params: Params }) {
                       <IconChartBar className="size-4" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium">Difficulty Level</p>
+                      <p className="text-sm font-medium">Рівень складності</p>
                       <p className="text-sm text-muted-foreground">
                         {course.level}
                       </p>
@@ -210,7 +208,7 @@ export default async function SlugPage({ params }: { params: Params }) {
                       <IconCategory className="size-4" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium">Category</p>
+                      <p className="text-sm font-medium">Категорія</p>
                       <p className="text-sm text-muted-foreground">
                         {course.category}
                       </p>
@@ -222,13 +220,13 @@ export default async function SlugPage({ params }: { params: Params }) {
                       <IconBook className="size-4" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium">Total Lessons</p>
+                      <p className="text-sm font-medium">Кількість уроків</p>
                       <p className="text-sm text-muted-foreground">
                         {course.chapter.reduce(
                           (total, chapter) => total + chapter.lessons.length,
                           0
                         ) || 0}{" "}
-                        Lessons
+                        уроків
                       </p>
                     </div>
                   </div>
@@ -236,25 +234,25 @@ export default async function SlugPage({ params }: { params: Params }) {
               </div>
 
               <div className="mb-6 space-y-3">
-                <h4>This course includes:</h4>
+                <h4>Цей курс включає:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm">
                     <div className="rounded-full p-1 bg-green-500/10 text-green-500">
                       <CheckIcon className="size-3" />
                     </div>
-                    <span>Full lifetime access</span>
+                    <span>Довічний доступ</span>
                   </li>
                   <li className="flex items-center gap-2 text-sm">
                     <div className="rounded-full p-1 bg-green-500/10 text-green-500">
                       <CheckIcon className="size-3" />
                     </div>
-                    <span>Access on mobile and desktop</span>
+                    <span>Доступ з мобільних і комп'ютерів</span>
                   </li>
                   <li className="flex items-center gap-2 text-sm">
                     <div className="rounded-full p-1 bg-green-500/10 text-green-500">
                       <CheckIcon className="size-3" />
                     </div>
-                    <span>Certificate of completion</span>
+                    <span>Сертифікат про завершення</span>
                   </li>
                 </ul>
               </div>
@@ -264,14 +262,14 @@ export default async function SlugPage({ params }: { params: Params }) {
                   className={buttonVariants({ className: "w-full" })}
                   href="/dashboard"
                 >
-                  Watch Course
+                  Перейти до курсу
                 </Link>
               ) : (
                 <EnrollmentButton courseId={course.id} />
               )}
 
               <p className="mt-3 text-center text-xs text-muted-foreground">
-                30-day money-back guarantee
+                30-денна гарантія повернення коштів
               </p>
             </CardContent>
           </Card>

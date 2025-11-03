@@ -18,10 +18,9 @@ export default function NotAdminRoute() {
             <ShieldX className="size-16 text-destructive" />
           </div>
 
-          <CardTitle className="text-2xl">Access Restricted</CardTitle>
+          <CardTitle className="text-2xl">Доступ обмежено</CardTitle>
           <CardDescription className="max-w-xs mx-auto">
-            Hey! You are not an admin, which means you can&apos;t create any
-            courses or stuff like that...
+            Ви не є адміністратором, тому не можете створювати курси та подібне.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -32,7 +31,7 @@ export default function NotAdminRoute() {
             })}
           >
             <ArrowLeft className="mr-1 size-4" />
-            Back to home
+            Повернутися на головну
           </Link>
         </CardContent>
       </Card>

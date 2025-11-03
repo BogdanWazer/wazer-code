@@ -69,7 +69,7 @@ export function Uploader({ onChange, value, fileTypeAccepted }: iAppProps) {
         });
 
         if (!presignedResponse.ok) {
-          toast.error("Failed to get presigned URL");
+          toast.error("Не вдалося отримати попередньо підписаний URL");
           setFileState((prev) => ({
             ...prev,
             uploading: false,
@@ -106,16 +106,16 @@ export function Uploader({ onChange, value, fileTypeAccepted }: iAppProps) {
 
               onChange?.(key);
 
-              toast.success("File uploaded succesfully");
+              toast.success("Файл успішно завантажено");
 
               resolve();
             } else {
-              reject(new Error("Upload failed..."));
+              reject(new Error("Помилка завантаження..."));
             }
           };
 
           xhr.onerror = () => {
-            reject(new Error("Upload failed"));
+            reject(new Error("Помилка завантаження"));
           };
 
           xhr.open("PUT", presignedUrl);
@@ -123,7 +123,7 @@ export function Uploader({ onChange, value, fileTypeAccepted }: iAppProps) {
           xhr.send(file);
         });
       } catch {
-        toast.error("Something went wrong");
+        toast.error("Щось пішло не так");
 
         setFileState((prev) => ({
           ...prev,
@@ -179,7 +179,7 @@ export function Uploader({ onChange, value, fileTypeAccepted }: iAppProps) {
       });
 
       if (!response.ok) {
-        toast.error("Failed to remove file from storage");
+        toast.error("Не вдалося видалити файл зі сховища");
 
         setFileState((prev) => ({
           ...prev,
@@ -207,9 +207,9 @@ export function Uploader({ onChange, value, fileTypeAccepted }: iAppProps) {
         isDeleting: false,
       }));
 
-      toast.success("File removed successfully");
+      toast.success("Файл успішно видалено");
     } catch {
-      toast.error("Error removing file. please try again");
+      toast.error("Помилка видалення файлу. Спробуйте ще раз");
 
       setFileState((prev) => ({
         ...prev,
@@ -230,11 +230,11 @@ export function Uploader({ onChange, value, fileTypeAccepted }: iAppProps) {
       );
 
       if (fileSizeToBig) {
-        toast.error("File Size exceeds the limit");
+        toast.error("Розмір файлу перевищує ліміт");
       }
 
       if (tooManyFiles) {
-        toast.error("Too many files selected, max is 1");
+        toast.error("Вибрано занадто багато файлів, максимум — 1");
       }
     }
   }

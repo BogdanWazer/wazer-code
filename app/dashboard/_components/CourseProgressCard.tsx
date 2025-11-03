@@ -30,7 +30,7 @@ export function CourseProgressCard({ data }: iAppProps) {
         height={400}
         className="w-full rounded-t-xl aspect-video h-full object-cover"
         src={thumbnailUrl}
-        alt="Thumbail Image of Course"
+        alt="Мініатюра курсу"
       />
 
       <CardContent className="p-4">
@@ -46,13 +46,13 @@ export function CourseProgressCard({ data }: iAppProps) {
 
         <div className="space-y-4 mt-5">
           <div className="flex justify-between mb-1 text-sm">
-            <p>Progress:</p>
+            <p>Прогрес:</p>
             <p className="font-medium">{progressPercentage}%</p>
           </div>
           <Progress value={progressPercentage} className="h-1.5" />
 
           <p className="text-xs text-muted-foreground mt-1">
-            {completedLessons} of {totalLessons} lessons completed
+            Завершено {completedLessons} з {totalLessons} уроків
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export function CourseProgressCard({ data }: iAppProps) {
           href={`/dashboard/${data.Course.slug}`}
           className={buttonVariants({ className: "w-full mt-4" })}
         >
-          Learn More
+          Детальніше
         </Link>
       </CardContent>
     </Card>

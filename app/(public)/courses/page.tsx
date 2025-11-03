@@ -12,11 +12,11 @@ export default function PublicCoursesroute() {
     <div className="mt-5">
       <div className="flex flex-col space-y-2 mb-10">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tighter">
-          Explore Courses
+          Переглянути курси
         </h1>
         <p className="text-muted-foreground ">
-          Discover our wide range of courses designed to help you achieve your
-          learning goals.
+          Ознайомтеся з широким вибором курсів, створених для досягнення ваших
+          навчальних цілей.
         </p>
       </div>
 

@@ -66,7 +66,7 @@ export function NavUser() {
                     : session?.user.email.split("@")[0]}
                 </span>
                 <span className="text-muted-foreground truncate text-xs">
-                  jan@gmail.com
+                  {session?.user.email}
                 </span>
               </div>
               <IconDotsVertical className="ml-auto size-4" />
@@ -101,7 +101,7 @@ export function NavUser() {
                       : session?.user.email.split("@")[0]}
                   </span>
                   <span className="text-muted-foreground truncate text-xs">
-                    jan@gmail.com
+                    ki4ack.bogdan@gmail.com
                   </span>
                 </div>
               </div>
@@ -111,26 +111,26 @@ export function NavUser() {
               <DropdownMenuItem asChild>
                 <Link href="/">
                   <HomeIcon />
-                  Homepage
+                  Головна
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/admin">
                   <IconDashboard />
-                  Dashboard
+                  Панель
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/admin/courses">
                   <Tv2 />
-                  Courses
+                  Курси
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleSignOut}>
               <IconLogout />
-              Log out
+              Вийти
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

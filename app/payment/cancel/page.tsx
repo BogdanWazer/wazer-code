@@ -12,9 +12,9 @@ export default function PaymentCancelled() {
             <XIcon className="size-12 p-2 bg-red-500/30 text-red-500 rounded-full" />
           </div>
           <div className="mt-3 text-center sm:mt-5 w-full">
-            <h2 className="text-xl font-semibold">Payment Cancelled</h2>
+            <h2 className="text-xl font-semibold">Платіж скасовано</h2>
             <p className="text-sm mt-2 text-muted-foreground tracking-tight text-balance">
-              No worries, you wont be charged. Please try again!
+              Не хвилюйтеся, з вас не буде знято кошти. Спробуйте ще раз!
             </p>
 
             <Link
@@ -22,7 +22,7 @@ export default function PaymentCancelled() {
               className={buttonVariants({ className: "w-full mt-5" })}
             >
               <ArrowLeft className="size-4" />
-              Go back to Homepage
+              Повернутися на головну
             </Link>
           </div>
         </CardContent>

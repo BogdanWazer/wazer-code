@@ -74,7 +74,7 @@ export default function CourseCreationPage() {
       const { data: result, error } = await tryCatch(CreateCourse(values));
 
       if (error) {
-        toast.error("An unexpected error occurred. Please try again.");
+        toast.error("Сталася неочікувана помилка. Спробуйте ще раз.");
         return;
       }
 
@@ -100,14 +100,14 @@ export default function CourseCreationPage() {
         >
           <ArrowLeft className="size-4" />
         </Link>
-        <h1 className="text-2xl font-bold">Create Courses</h1>
+        <h1 className="text-2xl font-bold">Створити курс</h1>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>Basic Information</CardTitle>
+          <CardTitle>Базова інформація</CardTitle>
           <CardDescription>
-            Provide basic information about the course
+            Надішліть базову інформацію про курс
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -118,9 +118,9 @@ export default function CourseCreationPage() {
                 name="title"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Title</FormLabel>
+                    <FormLabel>Назва</FormLabel>
                     <FormControl>
-                      <Input placeholder="Title" {...field} />
+                      <Input placeholder="Назва" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -133,9 +133,9 @@ export default function CourseCreationPage() {
                   name="slug"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <FormLabel>Slug</FormLabel>
+                      <FormLabel>Слаг</FormLabel>
                       <FormControl>
-                        <Input placeholder="Slug" {...field} />
+                        <Input placeholder="Слаг" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -153,7 +153,7 @@ export default function CourseCreationPage() {
                     form.setValue("slug", slug, { shouldValidate: true });
                   }}
                 >
-                  Generate Slug <SparkleIcon className="ml-1" size={16} />
+                  Згенерувати слаг <SparkleIcon className="ml-1" size={16} />
                 </Button>
               </div>
 
@@ -162,10 +162,10 @@ export default function CourseCreationPage() {
                 name="smallDescription"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel>Small Description</FormLabel>
+                    <FormLabel>Короткий опис</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Small Description"
+                        placeholder="Короткий опис"
                         className="min-h-[120px]"
                         {...field}
                       />
@@ -180,7 +180,7 @@ export default function CourseCreationPage() {
                 name="description"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel>Description</FormLabel>
+                    <FormLabel>Опис</FormLabel>
                     <FormControl>
                       <RichTextEditor field={field} />
                     </FormControl>
@@ -194,7 +194,7 @@ export default function CourseCreationPage() {
                 name="fileKey"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel>Thumbnail image</FormLabel>
+                    <FormLabel>Мініатюра</FormLabel>
                     <FormControl>
                       <Uploader
                         fileTypeAccepted="image"
@@ -213,14 +213,14 @@ export default function CourseCreationPage() {
                   name="category"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <FormLabel>Category</FormLabel>
+                      <FormLabel>Категорія</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
                         <FormControl>
                           <SelectTrigger className="w-full">
-                            <SelectValue placeholder="Select Category" />
+                            <SelectValue placeholder="Оберіть категорію" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
@@ -242,14 +242,14 @@ export default function CourseCreationPage() {
                   name="level"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <FormLabel>Level</FormLabel>
+                      <FormLabel>Рівень</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
                         <FormControl>
                           <SelectTrigger className="w-full">
-                            <SelectValue placeholder="Select Value" />
+                            <SelectValue placeholder="Оберіть значення" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
@@ -271,10 +271,10 @@ export default function CourseCreationPage() {
                   name="duration"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <FormLabel>Duration (hours)</FormLabel>
+                      <FormLabel>Тривалість (години)</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Duration"
+                          placeholder="Тривалість"
                           type="number"
                           {...field}
                         />
@@ -289,9 +289,9 @@ export default function CourseCreationPage() {
                   name="price"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <FormLabel>Price ($)</FormLabel>
+                      <FormLabel>Ціна ($)</FormLabel>
                       <FormControl>
-                        <Input placeholder="Price" type="number" {...field} />
+                        <Input placeholder="Ціна" type="number" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -304,14 +304,14 @@ export default function CourseCreationPage() {
                 name="status"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel>Status</FormLabel>
+                    <FormLabel>Статус</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger className="w-full">
-                          <SelectValue placeholder="Select Status" />
+                          <SelectValue placeholder="Оберіть статус" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
@@ -331,12 +331,12 @@ export default function CourseCreationPage() {
               <Button type="submit" disabled={pending}>
                 {pending ? (
                   <>
-                    Creating...
+                    Створення...
                     <Loader2 className="animate-spin ml-1" />
                   </>
                 ) : (
                   <>
-                    Create Course <PlusIcon className="ml-1" size={16} />
+                    Створити курс <PlusIcon className="ml-1" size={16} />
                   </>
                 )}
               </Button>

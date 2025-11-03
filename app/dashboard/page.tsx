@@ -14,17 +14,17 @@ export default async function DashboardPage() {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold">Enrolled Courses</h1>
+        <h1 className="text-3xl font-bold">Мої курси</h1>
         <p className="text-muted-foreground">
-          Here you can see all the courses you have access to
+          Тут ви бачите всі курси, до яких маєте доступ
         </p>
       </div>
 
       {enrolledCourses.length === 0 ? (
         <EmptyState
-          title="No courses purchased"
-          description="You haven't purchased any courses yet."
-          buttonText="Browse Courses"
+          title="Курси відсутні"
+          description="Ви ще не придбали жодного курсу."
+          buttonText="Переглянути курси"
           href="/courses"
         />
       ) : (
@@ -37,9 +37,9 @@ export default async function DashboardPage() {
 
       <section className="mt-10">
         <div className="flex flex-col gap-2 mb-5">
-          <h1 className="text-3xl font-bold">Available Courses</h1>
+          <h1 className="text-3xl font-bold">Доступні курси</h1>
           <p className="text-muted-foreground">
-            Here you can see all the courses you can purchase
+            Тут ви бачите всі курси, які можна придбати
           </p>
         </div>
 
@@ -50,9 +50,9 @@ export default async function DashboardPage() {
             )
         ).length === 0 ? (
           <EmptyState
-            title="No courses available"
-            description="You have already purchased all available courses."
-            buttonText="Browse Courses"
+            title="Немає доступних курсів"
+            description="Ви вже придбали всі доступні курси."
+            buttonText="Переглянути курси"
             href="/courses"
           />
         ) : (

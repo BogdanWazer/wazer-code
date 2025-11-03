@@ -42,13 +42,13 @@ export function AdminCourseCard({ data }: iAppProps) {
             <DropdownMenuItem asChild>
               <Link href={`/admin/courses/${data.id}/edit`}>
                 <Pencil className="size-4 mr-2" />
-                Edit Course
+                Редагувати курс
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <Link href={`/courses/${data.slug}`}>
                 <Eye className="size-4 mr-2" />
-                Preview
+                Перегляд
               </Link>
             </DropdownMenuItem>
 
@@ -56,7 +56,7 @@ export function AdminCourseCard({ data }: iAppProps) {
             <DropdownMenuItem asChild>
               <Link href={`/admin/courses/${data.id}/delete`}>
                 <Trash2 className="size-4 mr-2 text-destructive" />
-                Delete Course
+                Видалити курс
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -64,7 +64,7 @@ export function AdminCourseCard({ data }: iAppProps) {
       </div>
       <Image
         src={thumbnailUrl}
-        alt="Thumbnail Url"
+        alt="Мініатюра"
         width={600}
         height={400}
         className="w-full rounded-t-lg aspect-video h-full object-cover"
@@ -99,7 +99,7 @@ export function AdminCourseCard({ data }: iAppProps) {
           })}
           href={`/admin/courses/${data.id}/edit`}
         >
-          Edit Course <ArrowRight className="size-4" />
+          Редагувати курс <ArrowRight className="size-4" />
         </Link>
       </CardContent>
     </Card>

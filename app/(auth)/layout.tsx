@@ -17,7 +17,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
         })}
       >
         <ArrowLeft className="size-4" />
-        Back
+        Назад
       </Link>
 
       <div className="flex w-full max-w-sm flex-col gap-6">
@@ -26,20 +26,15 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
           href="/"
         >
           <Image src={Logo} alt="Logo" width={32} height={32} />
-          WazerCode.
+          WazerCode
         </Link>
         {children}
 
         <div className="text-balance text-center text-xs text-muted-foreground">
-          By clicking continue, you agree to our{" "}
-          <span className="hover:text-primary hover:underline">
-            Terms of service
-          </span>{" "}
-          and{" "}
-          <span className="hover:text-primary hover:underline">
-            Privacy Policy
-          </span>
-          .
+          Натискаючи «Продовжити», ви погоджуєтесь з нашими{" "}
+          <span className="hover:text-primary hover:underline">Умовами користування</span>{" "}
+          та{" "}
+          <span className="hover:text-primary hover:underline">Політикою конфіденційності</span>.
         </div>
       </div>
     </div>

@@ -36,7 +36,7 @@ export function UserDropdown({ email, name, image }: iAppProps) {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
           <Avatar>
-            <AvatarImage src={image} alt="Profile image" />
+            <AvatarImage src={image} alt="Зображення профілю" />
             <AvatarFallback>{name[0].toUpperCase()}</AvatarFallback>
           </Avatar>
           <ChevronDownIcon
@@ -52,7 +52,7 @@ export function UserDropdown({ email, name, image }: iAppProps) {
             {name}
           </span>
           <span className="text-muted-foreground truncate text-xs font-normal">
-            john@john.com
+            {email}
           </span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
@@ -60,13 +60,13 @@ export function UserDropdown({ email, name, image }: iAppProps) {
           <DropdownMenuItem asChild>
             <Link href="/">
               <Home size={16} className="opacity-60" aria-hidden="true" />
-              <span>Home</span>
+              <span>Головна</span>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <Link href="/course">
               <BookOpen size={16} className="opacity-60" aria-hidden="true" />
-              <span>Courses</span>
+              <span>Курси</span>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
@@ -76,7 +76,7 @@ export function UserDropdown({ email, name, image }: iAppProps) {
                 className="opacity-60"
                 aria-hidden="true"
               />
-              <span>Dashboard</span>
+              <span>Панель</span>
             </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -84,7 +84,7 @@ export function UserDropdown({ email, name, image }: iAppProps) {
 
         <DropdownMenuItem onClick={handleSignOut}>
           <LogOutIcon size={16} className="opacity-60" aria-hidden="true" />
-          <span>Logout</span>
+          <span>Вийти</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -10,9 +10,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { UserDropdown } from "./UserDropdown";
 
 const navigationItems = [
-  { name: "Home", href: "/" },
-  { name: "Courses", href: "/courses" },
-  { name: "Dashboard", href: "/dashboard" },
+  { name: "Головна", href: "/" },
+  { name: "Курси", href: "/courses" },
+  { name: "Панель", href: "/dashboard" },
 ];
 
 export function Navbar() {
@@ -61,10 +61,10 @@ export function Navbar() {
                   href="/login"
                   className={buttonVariants({ variant: "secondary" })}
                 >
-                  Login
+                  Увійти
                 </Link>
                 <Link href="/login" className={buttonVariants()}>
-                  Get Started
+                  Почати
                 </Link>
               </>
             )}

@@ -22,7 +22,7 @@ export async function SectionCards() {
       <Card className="@container/card">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <div className="">
-            <CardDescription>Total Signups</CardDescription>
+            <CardDescription>Усього реєстрацій</CardDescription>
             <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
               {totalSignups}
             </CardTitle>
@@ -31,7 +31,7 @@ export async function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <p className="text-muted-foreground">
-            Registered users on the platform
+            Зареєстровані користувачі на платформі
           </p>
         </CardFooter>
       </Card>
@@ -39,7 +39,7 @@ export async function SectionCards() {
       <Card className="@container/card">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <div>
-            <CardDescription>Total Customers</CardDescription>
+            <CardDescription>Усього клієнтів</CardDescription>
             <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
               {totalCustomers}
             </CardTitle>
@@ -48,7 +48,7 @@ export async function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <p className="text-muted-foreground">
-            Users who have enrolled in courses
+            Користувачі, які записалися на курси
           </p>
         </CardFooter>
       </Card>
@@ -56,7 +56,7 @@ export async function SectionCards() {
       <Card className="@container/card">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <div>
-            <CardDescription>Total Courses</CardDescription>
+            <CardDescription>Усього курсів</CardDescription>
             <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
               {totalCourses}
             </CardTitle>
@@ -65,7 +65,7 @@ export async function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <p className="text-muted-foreground">
-            Available courses on the platform
+            Доступні курси на платформі
           </p>
         </CardFooter>
       </Card>
@@ -73,7 +73,7 @@ export async function SectionCards() {
       <Card className="@container/card">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <div>
-            <CardDescription>Total Lessons</CardDescription>
+            <CardDescription>Усього уроків</CardDescription>
             <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
               {totalLessons}
             </CardTitle>
@@ -82,7 +82,7 @@ export async function SectionCards() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <p className="text-muted-foreground">
-            Total learning content available
+            Загальна кількість навчального контенту
           </p>
         </CardFooter>
       </Card>

@@ -43,14 +43,14 @@ export function CourseSidebar({ course }: iAppProps) {
 
         <div className="space-y-2">
           <div className="flex justify-between text-xs">
-            <span className="text-muted-foreground">Progress</span>
+            <span className="text-muted-foreground">Прогрес</span>
             <span className="font-medium">
-              {completedLessons}/{totalLessons} lessons
+              {completedLessons}/{totalLessons} уроків
             </span>
           </div>
           <Progress value={progressPercentage} className="h-1.5" />
           <p className="text-xs text-muted-foreground">
-            {progressPercentage}% complete
+            {progressPercentage}% виконано
           </p>
         </div>
       </div>
@@ -72,7 +72,7 @@ export function CourseSidebar({ course }: iAppProps) {
                   </p>
 
                   <p className="text-[10px] text-muted-foreground font-medium truncate">
-                    {chapter.lessons.length} lessons
+                    {chapter.lessons.length} уроків
                   </p>
                 </div>
               </Button>

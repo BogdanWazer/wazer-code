@@ -72,13 +72,13 @@ export function LessonItem({ lesson, slug, isActive, completed }: iAppProps) {
           </p>
           {completed && (
             <p className="text-[10px] text-green-700 dark:text-green-300 font-medium">
-              Completed
+              Завершено
             </p>
           )}
 
           {isActive && !completed && (
             <p className="text-[10px] text-primary font-mediums">
-              Currently Watching
+              Переглядається
             </p>
           )}
         </div>

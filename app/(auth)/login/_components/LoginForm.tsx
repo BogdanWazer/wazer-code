@@ -30,10 +30,10 @@ export function LoginForm() {
         callbackURL: "/",
         fetchOptions: {
           onSuccess: () => {
-            toast.success("Singed in with Github, you will be redirected...");
+            toast.success("Увійшли через GitHub, зараз відбудеться перенаправлення...");
           },
           onError: () => {
-            toast.error("Internal Server Error");
+            toast.error("Внутрішня помилка сервера");
           },
         },
       });
@@ -47,11 +47,11 @@ export function LoginForm() {
         type: "sign-in",
         fetchOptions: {
           onSuccess: () => {
-            toast.success("Email sent");
+            toast.success("Лист надіслано");
             router.push(`/verify-request?email=${email}`);
           },
           onError: () => {
-            toast.error("Erorr sending email");
+            toast.error("Помилка надсилання листа");
           },
         },
       });
@@ -60,9 +60,9 @@ export function LoginForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-xl">Welcome Back!</CardTitle>
+        <CardTitle className="text-xl">З поверненням!</CardTitle>
         <CardDescription>
-          Login with your Github or Email Account
+          Увійдіть через GitHub або email
         </CardDescription>
       </CardHeader>
 
@@ -76,25 +76,25 @@ export function LoginForm() {
           {githubPending ? (
             <>
               <Loader className="size-4 animate-spin" />
-              <span>Loading...</span>
+              <span>Завантаження...</span>
             </>
           ) : (
             <>
               <GithubIcon className="size-4" />
-              Sign in with GitHub
+              Увійти через GitHub
             </>
           )}
         </Button>
 
         <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
           <span className="relative z-10 bg-card px-2 text-muted-foreground">
-            Or continue with
+            Або продовжити
           </span>
         </div>
 
         <div className="flex flex-col gap-3">
           <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">Електронна пошта</Label>
             <Input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -108,12 +108,12 @@ export function LoginForm() {
             {emailPending ? (
               <>
                 <Loader2 className="size-4 animate-spin" />
-                <span>Loading...</span>
+                <span>Завантаження...</span>
               </>
             ) : (
               <>
                 <Send className="size-4" />
-                <span>Continue with Email</span>
+                <span>Продовжити через email</span>
               </>
             )}
           </Button>

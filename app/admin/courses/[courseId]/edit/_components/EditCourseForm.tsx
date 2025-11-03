@@ -72,7 +72,7 @@ export function EditCourseForm({ data }: iAppProps) {
       );
 
       if (error) {
-        toast.error("An unexpected error occurred. Please try again.");
+        toast.error("Сталася неочікувана помилка. Спробуйте ще раз.");
         return;
       }
 
@@ -93,9 +93,9 @@ export function EditCourseForm({ data }: iAppProps) {
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Title</FormLabel>
+              <FormLabel>Назва</FormLabel>
               <FormControl>
-                <Input placeholder="Title" {...field} />
+                <Input placeholder="Назва" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -108,9 +108,9 @@ export function EditCourseForm({ data }: iAppProps) {
             name="slug"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Slug</FormLabel>
+                <FormLabel>Слаг</FormLabel>
                 <FormControl>
-                  <Input placeholder="Slug" {...field} />
+                  <Input placeholder="Слаг" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -128,7 +128,7 @@ export function EditCourseForm({ data }: iAppProps) {
               form.setValue("slug", slug, { shouldValidate: true });
             }}
           >
-            Generate Slug <SparkleIcon className="ml-1" size={16} />
+            Згенерувати слаг <SparkleIcon className="ml-1" size={16} />
           </Button>
         </div>
 
@@ -137,10 +137,10 @@ export function EditCourseForm({ data }: iAppProps) {
           name="smallDescription"
           render={({ field }) => (
             <FormItem className="w-full">
-              <FormLabel>Small Description</FormLabel>
+              <FormLabel>Короткий опис</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Small Description"
+                  placeholder="Короткий опис"
                   className="min-h-[120px]"
                   {...field}
                 />
@@ -155,7 +155,7 @@ export function EditCourseForm({ data }: iAppProps) {
           name="description"
           render={({ field }) => (
             <FormItem className="w-full">
-              <FormLabel>Description</FormLabel>
+              <FormLabel>Опис</FormLabel>
               <FormControl>
                 <RichTextEditor field={field} />
               </FormControl>
@@ -169,7 +169,7 @@ export function EditCourseForm({ data }: iAppProps) {
           name="fileKey"
           render={({ field }) => (
             <FormItem className="w-full">
-              <FormLabel>Thumbnail image</FormLabel>
+              <FormLabel>Мініатюра</FormLabel>
               <FormControl>
                 <Uploader
                   fileTypeAccepted="image"
@@ -188,14 +188,14 @@ export function EditCourseForm({ data }: iAppProps) {
             name="category"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Category</FormLabel>
+                <FormLabel>Категорія</FormLabel>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
                   <FormControl>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select Category" />
+                      <SelectValue placeholder="Оберіть категорію" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -217,14 +217,14 @@ export function EditCourseForm({ data }: iAppProps) {
             name="level"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Level</FormLabel>
+                <FormLabel>Рівень</FormLabel>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
                   <FormControl>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select Value" />
+                      <SelectValue placeholder="Оберіть значення" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -246,9 +246,9 @@ export function EditCourseForm({ data }: iAppProps) {
             name="duration"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Duration (hours)</FormLabel>
+                <FormLabel>Тривалість (години)</FormLabel>
                 <FormControl>
-                  <Input placeholder="Duration" type="number" {...field} />
+                  <Input placeholder="Тривалість" type="number" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -260,9 +260,9 @@ export function EditCourseForm({ data }: iAppProps) {
             name="price"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Price ($)</FormLabel>
+                <FormLabel>Ціна ($)</FormLabel>
                 <FormControl>
-                  <Input placeholder="Price" type="number" {...field} />
+                  <Input placeholder="Ціна" type="number" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -275,11 +275,11 @@ export function EditCourseForm({ data }: iAppProps) {
           name="status"
           render={({ field }) => (
             <FormItem className="w-full">
-              <FormLabel>Status</FormLabel>
+              <FormLabel>Статус</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Status" />
+                    <SelectValue placeholder="Оберіть статус" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -299,12 +299,12 @@ export function EditCourseForm({ data }: iAppProps) {
         <Button type="submit" disabled={pending}>
           {pending ? (
             <>
-              Updating...
+              Оновлення...
               <Loader2 className="animate-spin ml-1" />
             </>
           ) : (
             <>
-              Update Course <PlusIcon className="ml-1" size={16} />
+              Оновити курс <PlusIcon className="ml-1" size={16} />
             </>
           )}
         </Button>

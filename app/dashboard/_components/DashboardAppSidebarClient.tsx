@@ -44,7 +44,7 @@ export function DashboardAppSidebarClient({ userRole, ...props }: DashboardAppSi
       ...(userRole === "admin" 
         ? [
             {
-              title: "Admin Panel",
+              title: "Панель адміністратора",
               url: "/admin",
               icon: IconShield,
             },

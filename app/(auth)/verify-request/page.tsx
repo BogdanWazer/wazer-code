@@ -42,11 +42,11 @@ function VerifyRequest() {
         otp: otp,
         fetchOptions: {
           onSuccess: () => {
-            toast.success("Email verified");
+            toast.success("Email підтверджено");
             router.push("/");
           },
           onError: () => {
-            toast.error("Error verifying Email/OTP");
+            toast.error("Помилка підтвердження Email/OTP");
           },
         },
       });
@@ -55,10 +55,10 @@ function VerifyRequest() {
   return (
     <Card className="w-full mx-auto">
       <CardHeader className="text-center">
-        <CardTitle className="text-xl">Please check your email</CardTitle>
+        <CardTitle className="text-xl">Перевірте свою електронну пошту</CardTitle>
         <CardDescription>
-          We have sent a verification email code to your email address. Please
-          open the email and paste the code below.
+          Ми надіслали код підтвердження на вашу електронну адресу. Відкрийте
+          лист та вставте код нижче.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -81,7 +81,7 @@ function VerifyRequest() {
             </InputOTPGroup>
           </InputOTP>
           <p className="text-sm text-muted-foreground">
-            Enter the 6-digit code sent to your email
+            Введіть 6-значний код, надісланий на вашу пошту
           </p>
         </div>
 
@@ -93,10 +93,10 @@ function VerifyRequest() {
           {emailPending ? (
             <>
               <Loader2 className="size-4 animate-spin" />
-              <span>Loading...</span>
+              <span>Завантаження...</span>
             </>
           ) : (
-            "Verify Account"
+            "Підтвердити акаунт"
           )}
         </Button>
       </CardContent>

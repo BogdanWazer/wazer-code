@@ -23,7 +23,7 @@ export function PublicCourseCard({ data }: iAppProps) {
         height={400}
         className="w-full rounded-t-xl aspect-video h-full object-cover"
         src={thumbnailUrl}
-        alt="Thumbail Image of Course"
+        alt="Мініатюра курсу"
       />
 
       <CardContent className="p-4">
@@ -52,7 +52,7 @@ export function PublicCourseCard({ data }: iAppProps) {
           href={`/courses/${data.slug}`}
           className={buttonVariants({ className: "w-full mt-4" })}
         >
-          Learn More
+          Дізнатися більше
         </Link>
       </CardContent>
     </Card>

@@ -29,27 +29,25 @@ export default async function AnalyticsPage() {
 
   return (
     <div className="space-y-6">
-      {/* Page Header */}
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold">Analytics Dashboard</h1>
+        <h1 className="text-3xl font-bold">Аналітика</h1>
         <p className="text-muted-foreground">
-          Comprehensive insights into course completion and user engagement
+          Повна аналітика щодо завершення курсів і залученості користувачів
         </p>
       </div>
 
-      {/* Key Metrics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div>
-              <CardDescription>Total Courses</CardDescription>
+              <CardDescription>Усього курсів</CardDescription>
               <CardTitle className="text-2xl font-semibold">{dashboardStats.totalCourses}</CardTitle>
             </div>
             <IconBook className="size-6 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Available courses on platform
+              Доступні курси на платформі
             </p>
           </CardContent>
         </Card>
@@ -57,22 +55,20 @@ export default async function AnalyticsPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div>
-              <CardDescription>Active Students</CardDescription>
+              <CardDescription>Активні студенти</CardDescription>
               <CardTitle className="text-2xl font-semibold">{dashboardStats.totalCustomers}</CardTitle>
             </div>
             <IconUsers className="size-6 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Students enrolled in courses
-            </p>
+            <p className="text-sm text-muted-foreground">Студенти, що записані на курси</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div>
-              <CardDescription>Avg Completion Rate</CardDescription>
+              <CardDescription>Середній відсоток завершення</CardDescription>
               <CardTitle className="text-2xl font-semibold">
                 {courseStats.length > 0 
                   ? Math.round(courseStats.reduce((acc, course) => acc + course.completionRate, 0) / courseStats.length)
@@ -82,50 +78,39 @@ export default async function AnalyticsPage() {
             <IconTrendingUp className="size-6 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Average course completion rate
-            </p>
+            <p className="text-sm text-muted-foreground">Середній відсоток завершення курсів</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div>
-              <CardDescription>Total Lessons</CardDescription>
+              <CardDescription>Усього уроків</CardDescription>
               <CardTitle className="text-2xl font-semibold">{dashboardStats.totalLessons}</CardTitle>
             </div>
             <IconCheck className="size-6 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Learning content available
-            </p>
+            <p className="text-sm text-muted-foreground">Доступний навчальний контент</p>
           </CardContent>
         </Card>
       </div>
 
-      {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Course Completion Rates */}
         <Card>
           <CardHeader>
-            <CardTitle>Course Completion Rates</CardTitle>
-            <CardDescription>
-              Completion rates by course (courses with enrollments only)
-            </CardDescription>
+            <CardTitle>Відсоток завершення курсів</CardTitle>
+            <CardDescription>Показники завершення за курсами (лише з записами)</CardDescription>
           </CardHeader>
           <CardContent>
             <CourseCompletionChart data={courseStats} />
           </CardContent>
         </Card>
 
-        {/* Monthly Progress Trend */}
         <Card>
           <CardHeader>
-            <CardTitle>Monthly Lesson Completions</CardTitle>
-            <CardDescription>
-              Lesson completion trend over the last 6 months
-            </CardDescription>
+            <CardTitle>Щомісячні завершення уроків</CardTitle>
+            <CardDescription>Динаміка завершення за останні 6 місяців</CardDescription>
           </CardHeader>
           <CardContent>
             <MonthlyProgressChart data={monthlyStats} />
@@ -135,13 +120,10 @@ export default async function AnalyticsPage() {
 
       {/* Top Performers Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Top Courses */}
         <Card>
           <CardHeader>
-            <CardTitle>Top Performing Courses</CardTitle>
-            <CardDescription>
-              Courses with highest completion rates
-            </CardDescription>
+            <CardTitle>Найрезультативніші курси</CardTitle>
+            <CardDescription>Курси з найвищими відсотками завершення</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -154,13 +136,13 @@ export default async function AnalyticsPage() {
                     <div>
                       <p className="font-medium">{course.courseTitle}</p>
                       <p className="text-sm text-muted-foreground">
-                        {course.totalEnrollments} students • {course.totalLessons} lessons
+                        {course.totalEnrollments} студентів • {course.totalLessons} уроків
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="font-semibold">{course.completionRate}%</p>
-                    <p className="text-xs text-muted-foreground">completion</p>
+                    <p className="text-xs text-muted-foreground">завершення</p>
                   </div>
                 </div>
               ))}
@@ -168,13 +150,10 @@ export default async function AnalyticsPage() {
           </CardContent>
         </Card>
 
-        {/* Top Students */}
         <Card>
           <CardHeader>
-            <CardTitle>Top Performing Students</CardTitle>
-            <CardDescription>
-              Students with highest progress percentages
-            </CardDescription>
+            <CardTitle>Найкращі студенти</CardTitle>
+            <CardDescription>Студенти з найвищим прогресом</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -187,13 +166,13 @@ export default async function AnalyticsPage() {
                     <div>
                       <p className="font-medium">{user.userName}</p>
                       <p className="text-sm text-muted-foreground">
-                        {user.enrolledCourses} courses • {user.completedLessons}/{user.totalLessons} lessons
+                        {user.enrolledCourses} курсів • {user.completedLessons}/{user.totalLessons} уроків
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="font-semibold">{user.progressPercentage}%</p>
-                    <p className="text-xs text-muted-foreground">progress</p>
+                    <p className="text-xs text-muted-foreground">прогрес</p>
                   </div>
                 </div>
               ))}
@@ -202,13 +181,10 @@ export default async function AnalyticsPage() {
         </Card>
       </div>
 
-      {/* Course Enrollment Distribution */}
       <Card>
         <CardHeader>
-          <CardTitle>Course Enrollment Distribution</CardTitle>
-          <CardDescription>
-            Number of enrollments per course
-          </CardDescription>
+          <CardTitle>Розподіл записів на курси</CardTitle>
+          <CardDescription>Кількість записів на курс</CardDescription>
         </CardHeader>
         <CardContent>
           <EnrollmentChart data={courseStats} />

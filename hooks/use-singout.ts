@@ -10,11 +10,11 @@ export function useSignOut() {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          router.push("/"); // redirect to login page
-          toast.success("Singed out Successfully");
+          router.push("/");
+          toast.success("Вихід виконано успішно");
         },
         onError: () => {
-          toast.error("Failed to sign out");
+          toast.error("Не вдалося вийти з облікового запису");
         },
       },
     });
