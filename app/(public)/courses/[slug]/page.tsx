@@ -246,7 +246,7 @@ export default async function SlugPage({ params }: { params: Params }) {
                     <div className="rounded-full p-1 bg-green-500/10 text-green-500">
                       <CheckIcon className="size-3" />
                     </div>
-                    <span>Доступ з мобільних і комп'ютерів</span>
+                    <span>Доступ з мобільних і комп&rsquo;ютерів</span>
                   </li>
                   <li className="flex items-center gap-2 text-sm">
                     <div className="rounded-full p-1 bg-green-500/10 text-green-500">
