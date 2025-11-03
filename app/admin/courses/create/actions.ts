@@ -17,6 +17,42 @@ const aj = arcjet.withRule(
   })
 );
 
+// Reverse mapping: Ukrainian -> English for database
+function mapToEnglishLevel(ukrainian: string): "Beginner" | "Intermediate" | "Advanced" {
+  const levelMap: Record<string, "Beginner" | "Intermediate" | "Advanced"> = {
+    Початковий: "Beginner",
+    Середній: "Intermediate",
+    Просунутий: "Advanced",
+  };
+  return levelMap[ukrainian] || (ukrainian as "Beginner" | "Intermediate" | "Advanced");
+}
+
+function mapToEnglishStatus(ukrainian: string): "Draft" | "Published" | "Archived" {
+  const statusMap: Record<string, "Draft" | "Published" | "Archived"> = {
+    Чернетка: "Draft",
+    Опубліковано: "Published",
+    Архівовано: "Archived",
+  };
+  return statusMap[ukrainian] || (ukrainian as "Draft" | "Published" | "Archived");
+}
+
+function mapToEnglishCategory(ukrainian: string): string {
+  const categoryMap: Record<string, string> = {
+    Розробка: "Development",
+    Бізнес: "Business",
+    Фінанси: "Finance",
+    "IT та ПЗ": "IT & Software",
+    "Офісна продуктивність": "Office Productivity",
+    "Особистий розвиток": "Personal Development",
+    Дизайн: "Design",
+    Маркетинг: "Marketing",
+    "Здоров'я та фітнес": "Health & Fitness",
+    Музика: "Music",
+    "Викладання та академія": "Teaching & Academics",
+  };
+  return categoryMap[ukrainian] || ukrainian;
+}
+
 export async function CreateCourse(
   values: CourseSchemaType
 ): Promise<ApiResponse> {
@@ -60,12 +96,18 @@ export async function CreateCourse(
       },
     });
 
+    // Map Ukrainian values back to English for database
+    const dbData = {
+      ...validation.data,
+      level: mapToEnglishLevel(validation.data.level),
+      status: mapToEnglishStatus(validation.data.status),
+      category: mapToEnglishCategory(validation.data.category),
+      userId: session?.user.id as string,
+      stripePriceId: data.default_price as string,
+    };
+
     await prisma.course.create({
-      data: {
-        ...validation.data,
-        userId: session?.user.id as string,
-        stripePriceId: data.default_price as string,
-      },
+      data: dbData,
     });
 
     return {
