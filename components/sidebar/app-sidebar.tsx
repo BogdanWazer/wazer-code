@@ -7,12 +7,10 @@ import {
   IconDashboard,
   IconFileAi,
   IconFileDescription,
-  IconFolder,
   IconHelp,
   IconListDetails,
   IconSearch,
   IconSettings,
-  IconUsers,
 } from "@tabler/icons-react";
 import Logo from "@/public/logo.png";
 
@@ -53,11 +51,11 @@ const data = {
     //   url: "#",
     //   icon: IconFolder,
     // },
-    {
-      title: "Команда",
-      url: "#",
-      icon: IconUsers,
-    },
+    // {
+    //   title: "Команда",
+    //   url: "#",
+    //   icon: IconUsers,
+    // },
   ],
   navClouds: [
     {
@@ -138,7 +136,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <Link href="/">
                 <Image src={Logo} alt="Logo" className="size-5" />
-                <span className="text-base font-semibold">WazerCode.</span>
+                <span className="text-base font-semibold">WazerCode</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

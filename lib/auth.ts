@@ -21,7 +21,7 @@ export const auth = betterAuth({
     emailOTP({
       async sendVerificationOTP({ email, otp }) {
         await resend.emails.send({
-          from: "WazerCode <info@wazercode.digital>",
+          from: "WazerCode <info@WazerCodedigital>",
           to: [email],
           subject: "WazerCode - Підтвердьте свій email",
           html: `<p>Ваш одноразовий код: <strong>${otp}</strong></p>`,

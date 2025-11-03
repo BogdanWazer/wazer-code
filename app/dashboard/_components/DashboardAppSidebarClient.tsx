@@ -37,7 +37,7 @@ export function DashboardAppSidebarClient({ userRole, ...props }: DashboardAppSi
   const data = {
     navMain: [
       {
-        title: "Dashboard",
+        title: "Панель курсів",
         url: "/dashboard",
         icon: IconDashboard,
       },
@@ -136,7 +136,7 @@ export function DashboardAppSidebarClient({ userRole, ...props }: DashboardAppSi
             >
               <Link href="/">
                 <Image src={Logo} alt="Logo" className="size-5" />
-                <span className="text-base font-semibold">WazerCode.</span>
+                <span className="text-base font-semibold">WazerCode</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
